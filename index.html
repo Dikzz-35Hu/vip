@@ -218,12 +218,17 @@ footer {
 
 <script>
 const bgm = document.getElementById("bgm");
+const btn = document.getElementById("musicBtn");
 
-// bypass blokir autoplay browser
-document.addEventListener("click", () => {
-  bgm.play().catch(()=>{});
-}, { once:true });
-      </script>
+btn.onclick = () => {
+  bgm.volume = 0.5;
+  bgm.play();
+  btn.style.opacity = "0";
+  setTimeout(() => btn.remove(), 600);
+};
+</script>
+    
+<button id="musicBtn">🔊 MUSIC</button>
 
 <!-- SCRIPT BINTANG -->
 <script>
