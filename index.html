@@ -1,208 +1,233 @@
 <!DOCTYPE html>
-<html lang="id">  
-<head>  
-<meta charset="UTF-8" />  
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />  
-<title>Golden Brown Roleplay | Donate VIP</title>  
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Brown Roleplay | VIP Donate</title>
 
-<style>  
-* {  
-  margin: 0;  
-  padding: 0;  
-  box-sizing: border-box;  
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-}  
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+}
 
-body {  
-  min-height: 100vh;  
-  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.85)),  
-              url('https://images.alphacoders.com/605/605592.jpg') no-repeat center center fixed;  
-  background-size: cover;  
-  color: #fff;  
-  overflow-x: hidden;  
-}  
+body {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top, rgba(255,215,0,0.15), transparent 60%),
+        linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.95)),
+        url('https://images.alphacoders.com/605/605592.jpg') center/cover fixed;
+    color: #fff;
+    overflow-x: hidden;
+}
 
-.overlay {  
-  padding: 60px 20px;  
-}  
+/* === BINTANG EMAS === */
+.stars {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0;
+}
 
-.server-name {  
-  text-align: center;  
-  margin-bottom: 40px;  
-}  
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: gold;
+    opacity: 0.6;
+    animation: floatStar linear infinite;
+}
 
-.server-name h1 {  
-  font-size: 60px;  
-  letter-spacing: 5px;  
-  color: #FFD700;  
-  text-shadow: 0 0 15px rgba(255, 215, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.6);  
-  animation: neonGlow 1.5s ease-in-out infinite alternate;  
-}  
+@keyframes floatStar {
+    from { transform: translateY(100vh); }
+    to   { transform: translateY(-10vh); }
+}
 
-.server-name h2 {  
-  font-size: 22px;  
-  font-weight: 300;  
-  color: #fff5cc;  
-  letter-spacing: 3px;  
-  margin-top: 10px;  
-  text-shadow: 0 0 8px #FFD700;  
-}  
+/* === KONTEN === */
+.overlay {
+    position: relative;
+    z-index: 2;
+    padding: 70px 20px;
+}
 
-@keyframes neonGlow {  
-  from { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700, 0 0 30px #FFD700; }  
-  to { text-shadow: 0 0 20px #FFE066, 0 0 40px #FFD700, 0 0 60px #FFD700; }  
-}  
+.server-name {
+    text-align: center;
+    margin-bottom: 60px;
+}
 
-.vip-container {  
-  display: grid;  
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  
-  gap: 25px;  
-  max-width: 1000px;  
-  margin: auto;  
-}  
+.server-name h1 {
+    font-size: 54px;
+    letter-spacing: 5px;
+    color: #FFD700;
+    text-shadow:
+        0 0 15px rgba(255,215,0,0.6),
+        0 0 30px rgba(255,215,0,0.3);
+}
 
-.vip-card {  
-  background: rgba(0, 0, 0, 0.65);  
-  border: 2px solid rgba(255, 215, 0, 0.6);  
-  border-radius: 16px;  
-  padding: 25px;  
-  text-align: center;  
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.6);  
-  transition: transform 0.3s, box-shadow 0.3s;  
-  position: relative;  
-  overflow: hidden;  
-}  
+.server-name h2 {
+    font-size: 18px;
+    color: #ccc;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
 
-.vip-card::before {  
-  content: '';  
-  position: absolute;  
-  top: -50%;  
-  left: -50%;  
-  width: 200%;  
-  height: 200%;  
-  background: radial-gradient(circle, rgba(255,215,0,0.2) 0%, transparent 70%);  
-  animation: starMove 5s linear infinite;  
-}  
+/* === VIP CARD === */
+.vip-container {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
 
-@keyframes starMove {  
-  from { transform: rotate(0deg) translateX(0) rotate(0deg); }  
-  to { transform: rotate(360deg) translateX(10px) rotate(-360deg); }  
-}  
+.vip-card {
+    background: rgba(0,0,0,0.65);
+    border: 1px solid rgba(255,215,0,0.4);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0,0,0,0.7);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-.vip-card:hover {  
-  transform: translateY(-8px);  
-  box-shadow: 0 0 40px rgba(255, 215, 0, 0.8);  
-}  
+.vip-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 35px rgba(255,215,0,0.4);
+}
 
-.vip-card h3 {  
-  color: #FFD700;  
-  font-size: 28px;  
-  margin-bottom: 15px;  
-  text-shadow: 0 0 10px #FFD700;  
-}  
+.vip-card h3 {
+    color: #FFD700;
+    font-size: 26px;
+    margin-bottom: 15px;
+}
 
-.vip-card ul {  
-  list-style: none;  
-  margin-bottom: 20px;  
-  color: #ddd;  
-}  
+.vip-card ul {
+    list-style: none;
+    margin-bottom: 20px;
+    color: #ddd;
+}
 
-.vip-card ul li {  
-  margin: 10px 0;  
-  font-size: 15px;  
-  position: relative;  
-}  
+.vip-card ul li {
+    margin: 8px 0;
+    font-size: 14px;
+}
 
-.price {  
-  font-size: 24px;  
-  margin-bottom: 15px;  
-  color: #fff;  
-  text-shadow: 0 0 5px #FFD700;  
-}  
+.price {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
 
-.buy-btn {  
-  display: inline-block;  
-  padding: 14px 32px;  
-  background: linear-gradient(135deg, #FFD700, #b89600);  
-  color: #000;  
-  font-weight: bold;  
-  text-decoration: none;  
-  border-radius: 30px;  
-  transition: all 0.3s ease-in-out;  
-  box-shadow: 0 0 15px #FFD700;  
-}  
+/* === BUTTON === */
+.buy-btn {
+    display: inline-block;
+    padding: 14px 34px;
+    background: linear-gradient(135deg, #FFD700, #b89600);
+    color: #000;
+    font-weight: bold;
+    border-radius: 40px;
+    text-decoration: none;
+    box-shadow: 0 0 15px rgba(255,215,0,0.6);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
 
-.buy-btn:hover {  
-  background: linear-gradient(135deg, #ffea70, #d6b600);  
-  transform: scale(1.1);  
-  box-shadow: 0 0 25px #FFD700, 0 0 50px #FFD700;  
-}  
+.buy-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 30px rgba(255,215,0,0.9);
+}
 
-footer {  
-  text-align: center;  
-  margin-top: 60px;  
-  color: #aaa;  
-  font-size: 14px;  
-  text-shadow: 0 0 5px #FFD700;  
-}  
+/* === FOOTER === */
+footer {
+    margin-top: 70px;
+    text-align: center;
+    color: #aaa;
+    font-size: 13px;
+}
+</style>
+</head>
 
-</style>  
-</head>  
-<body>  
-<div class="overlay">  
+<body>
 
-<div class="server-name">  
-  <h1>GOLDEN BROWN ROLEPLAY</h1>  
-  <h2>Premium Donation System</h2>  
-</div>  
+<!-- BINTANG -->
+<div class="stars" id="stars"></div>
 
-<div class="vip-container">  
+<div class="overlay">
 
-  <div class="vip-card">  
-    <h3>VIP Bronze</h3>  
-    <ul>  
-      <li>✔ Tag VIP Bronze</li>  
-      <li>✔ Salary +10%</li>  
-      <li>✔ /vip chat</li>  
-    </ul>  
-    <div class="price">Rp 25.000</div>  
-    <a href="YOUR_DISCORD_LINK_HERE" target="_blank" class="buy-btn">Donate</a>  
-  </div>  
+<div class="server-name">
+    <h1>GOLDEN ROLEPLAY</h1>
+    <h2>Premium Donation System</h2>
+</div>
 
-  <div class="vip-card">  
-    <h3>VIP Silver</h3>  
-    <ul>  
-      <li>✔ Tag VIP Silver</li>  
-      <li>✔ Salary +25%</li>  
-      <li>✔ Akses Command VIP</li>  
-      <li>✔ Slot Vehicle +1</li>  
-    </ul>  
-    <div class="price">Rp 50.000</div>  
-    <a href="YOUR_DISCORD_LINK_HERE" target="_blank" class="buy-btn">Donate</a>  
-  </div>  
+<div class="vip-container">
 
-  <div class="vip-card">  
-    <h3>VIP Gold</h3>  
-    <ul>  
-      <li>✔ Tag VIP Gold</li>  
-      <li>✔ Salary +50%</li>  
-      <li>✔ Priority Queue</li>  
-      <li>✔ Slot Vehicle +2</li>  
-      <li>✔ Exclusive Skin</li>  
-    </ul>  
-    <div class="price">Rp 100.000</div>  
-    <a href="YOUR_DISCORD_LINK_HERE" target="_blank" class="buy-btn">Donate</a>  
-  </div>  
+<div class="vip-card">
+    <h3>VIP Bronze</h3>
+    <ul>
+        <li>✔ VIP Tag Bronze</li>
+        <li>✔ Salary +10%</li>
+        <li>✔ Slot Toys 1+</li>
+        <li>✔ VIP Chat</li>
+    </ul>
+    <div class="price">Rp 25.000</div>
+    <a href="https://wa.me/6283113164537" target="_blank" class="buy-btn">Donate</a>
+</div>
 
-</div>  
+<div class="vip-card">
+    <h3>VIP Silver</h3>
+    <ul>
+        <li>✔ VIP Tag Silver</li>
+        <li>✔ Salary +25%</li>
+        <li>✔ VIP Commands</li>
+        <li>✔ Slot Toys 3+</li>
+        <li>✔ Extra Vehicle Slot</li>
+    </ul>
+    <div class="price">Rp 50.000</div>
+    <a href="https://wa.me/6283113164537" target="_blank" class="buy-btn">Donate</a>
+</div>
 
-<footer>  
-  © 2026 Golden Brown Roleplay • All Rights Reserved  
-</footer>  
+<div class="vip-card">
+    <h3>VIP Gold</h3>
+    <ul>
+        <li>✔ VIP Tag Gold</li>
+        <li>✔ Salary +50%</li>
+        <li>✔ Priority Queue</li>
+        <li>✔ Exclusive Skin</li>
+        <li>✔ Slot Toys 5+</li>
+        <li>✔ Coin bonus 45+</li>
+    </ul>
+    <div class="price">Rp 100.000</div>
+    <a href="https://wa.me/6283113164537" target="_blank" class="buy-btn">Donate</a>
+</div>
 
-</div>  
+</div>
 
-<!-- Tambahkan musik di sini nanti, bisa diisi dengan <audio autoplay loop> -->  
+<footer>
+© 2026 GoldenBrown • All Rights Reserved
+</footer>
 
-</body>  
+</div>
+
+<!-- MUSIK -->
+<audio autoplay loop>
+    <source src="URL_MUSIK_KAMU.mp3" type="audio/mpeg">
+</audio>
+
+<!-- SCRIPT BINTANG -->
+<script>
+const stars = document.getElementById("stars");
+for (let i = 0; i < 120; i++) {
+    const star = document.createElement("div");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "vw";
+    star.style.animationDuration = (5 + Math.random() * 10) + "s";
+    star.style.opacity = Math.random();
+    stars.appendChild(star);
+}
+</script>
+
+</body>
 </html>
