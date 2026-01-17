@@ -212,9 +212,18 @@ footer {
 </div>
 
 <!-- MUSIK -->
-<audio autoplay loop>
-    <source src="https://e.top4top.io/m_3660v6ij40.mp3" type="audio/mpeg">
+<audio id="bgm" autoplay loop>
+  <source src="https://e.top4top.io/m_3660v6ij40.mp3" type="audio/mpeg">
 </audio>
+
+<script>
+const bgm = document.getElementById("bgm");
+
+// bypass blokir autoplay browser
+document.addEventListener("click", () => {
+  bgm.play().catch(()=>{});
+}, { once:true });
+      </script>
 
 <!-- SCRIPT BINTANG -->
 <script>
